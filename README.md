@@ -5,8 +5,11 @@
 SciKitLearn is the ML library we'll be using to create a classifier. Our final project will involve creating a supervised machine learning model that uses classification to predict the discrete beer style of a beer with the following inputs below:
 
 •	Review aroma
+
 •	Review appearance
+
 •	Review palate
+
 •	Review taste
 
 A few issues with the dataset and ways to overcome them are listed below:
