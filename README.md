@@ -23,5 +23,6 @@ Below are the steps we are following:
 2.	CLEAN & SCRUB DATA -> Get rid of unnecessary columns and bin similar beer styles together 
 3.	RUN DATA THROUGH ALOGORITHM -> Create 3 different classification algorithms for each class using class imbalance technique (oversampling, undersampling, and SMOTEENN)
 4.	a) EVALUATE -> Determine if the model has acceptable accuracy, precision, recall, and f1 score
+
     b) REPEAT -> Repeat steps 2-4 if model is not strong enough 
 5.	SAVE MODEL AND RESULTS -> Save the model and present to class
