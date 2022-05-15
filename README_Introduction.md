@@ -2,7 +2,7 @@
 
 # <ins>**Beer Reviews Analysis**</ins>
 
-The topic selected for our final project out of four options is the Beer Analysis. The reason for selecting this topic is predominantly the mass of data. The volume would help us to give ample data to train our machine learning model.
+The topic selected for our final project is the Beer Analysis. The reason for selecting this topic is predominantly the mass of data. The volume would help us to give ample data to train our machine learning model.
 
 ### <ins>**Description of source data**</ins>
 
