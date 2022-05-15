@@ -2,16 +2,16 @@
 
 # <ins>**Beer Reviews Analysis**</ins>
 
-The topic selected for our final project is the Beer Analysis. The reason for selecting this topic is predominantly the mass of data. The volume would help us to give ample data to train our machine learning model.
+The topic we have selected for our final project is creating a machine learning algorithm that will determine the beer stlye based on select inputs. The reason for selecting this topic is because we are able to work with 3 mass datasets as well as many members in our group being self-proclaimed beer conasuers.
 
-### <ins>**Description of source data**</ins>
+### <ins>**Description of Source Data**</ins>
 
-There are three source files in the CSV format:
+There are three source files in the CSV format that we obtained from Kaggle:
 - beers.csv
 - breweries.csv
 - reviewes.csv
 
-### <ins>***Beer.csv***</ins>
+#### <ins>***Beer.csv***</ins>
 
 The beer.csv file has 358,873 rows. The column header, data types and null values are depicted below:
 
@@ -23,7 +23,7 @@ The beer.csv file has 358,873 rows. The column header, data types and null value
 ![](https://github.com/jaykansara2019/Group-A_UofT_Data-Bootcamp_Final-Project/blob/cb87fd41d4f2b2ced89b18a7cc774a9b0baa775a/Images/df_beers%20(data%20types).png)
 
 
-### <ins>***Breweries.csv***</ins>
+#### <ins>***Breweries.csv***</ins>
 
 The breweries.csv file has 50,347 rows. The column header, data types and null values are depicted below:
 
@@ -33,7 +33,9 @@ The breweries.csv file has 50,347 rows. The column header, data types and null v
 
 ![](https://github.com/jaykansara2019/Group-A_UofT_Data-Bootcamp_Final-Project/blob/cb87fd41d4f2b2ced89b18a7cc774a9b0baa775a/Images/df_breweries%20(data%20types).png)
 
-### <ins>***reviews.csv***</ins>
+#### <ins>***reviews.csv***</ins>
+
+The reviews.csv file has 9,073,128 rows. The column header, data types and null values are depicted below:
 
 ![](https://github.com/jaykansara2019/Group-A_UofT_Data-Bootcamp_Final-Project/blob/cb87fd41d4f2b2ced89b18a7cc774a9b0baa775a/Images/df_reviews.png)
 
@@ -41,19 +43,12 @@ The breweries.csv file has 50,347 rows. The column header, data types and null v
 
 ![](https://github.com/jaykansara2019/Group-A_UofT_Data-Bootcamp_Final-Project/blob/cb87fd41d4f2b2ced89b18a7cc774a9b0baa775a/Images/df_reviews%20(data%20types).png)
 
-
-The reviews.csv file has 9,073,128 rows. The column header, data types and null values are depicted below:
-
-
-The data frame will be cleaned by dropping null values and bucketing the type of beer (e.g. Indian Pale Ale, and American Pale Ale will be categorised as 'Ale'). The country values will be filtered to only keep the United States data. With the help of either SQL or Python joins, all three data frames will be merged to create a unified data frame.
-
 ### <ins>**Questions we hope to answer with the data**</ins>
 
-- Is there any pattern in the review type (look, smell, taste and feel) and type of beer. In other words, can we predict a type of beer based on the user reviews?
-- States with the highest numbers of breweries.
-- Highest overall ranked beers
-- Breweries with the top-ranked beers
-- heat map of the breweries.
+- Are the input variables strong indicators of the beer style?
+- Do beers brewed in specific states have higher reviews?
+- Which States have the highest numbers of breweries?
+- Which beer style is has the highest reviews?
 
 
 
