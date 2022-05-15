@@ -2,14 +2,14 @@
 
   # <ins>**Beer Reviews Analysis**</ins>
 
-  The topic we have selected for our final project is creating a machine learning algorithm that will determine the beer stlye based on select inputs. The reason for selecting this topic is because we are able to work with 3 mass datasets as well as many members in our group being self-proclaimed beer conasuers.
+  The topic we have selected for our final project is creating a machine learning algorithm that will determine the beer stlye based on select inputs. The reason for selecting this topic is because we are able to work with 3 mass datasets as well as many members in our group being self-proclaimed beer connoisseur.
 
   ### <ins>**Description of Source Data**</ins>
 
   There are three source files in the CSV format that we obtained from Kaggle:
-  - beers.csv
-  - breweries.csv
-  - reviewes.csv
+  - [beers.csv](https://www.kaggle.com/datasets/ehallmar/beers-breweries-and-beer-reviews)
+  - [breweries.csv](https://www.kaggle.com/datasets/ehallmar/beers-breweries-and-beer-reviews)
+  - [reviewes.csv](https://www.kaggle.com/datasets/ehallmar/beers-breweries-and-beer-reviews)
 
   #### <ins>***Beer.csv***</ins>
 
