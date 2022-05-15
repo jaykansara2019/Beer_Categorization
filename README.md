@@ -38,3 +38,10 @@ Below are the steps we are following:
 
 5.	SAVE MODEL AND RESULTS -> Save the model and present to class
 
+## Database
+An ERD of our database is shown below:
+
+![ERD-Beer Reviews](https://user-images.githubusercontent.com/96354508/168489374-27e85e09-72b2-47b7-b15c-e48ca44b14a8.png)
+
+
+
