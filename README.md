@@ -16,6 +16,7 @@ SciKitLearn is the ML library we'll be using to create a classifier. Our final p
 
 •	Bewery
 
+
 A few issues with the dataset and ways to overcome them are listed below:
 
 1.	There are 104 unique beer styles. This needs to be cut down by binning similar beer styles and grouping beer styles with counts below 500 to an “Other” category.
