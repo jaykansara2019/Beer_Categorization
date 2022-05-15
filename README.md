@@ -92,7 +92,7 @@ Below are the steps we are following:
 ## Database
 An ERD of our database is shown below:
 
-![ERD-Beer Reviews](https://user-images.githubusercontent.com/96354508/168489374-27e85e09-72b2-47b7-b15c-e48ca44b14a8.png)
+![ERD-Beer Reviews](https://github.com/jaykansara2019/Group-A_UofT_Data-Bootcamp_Final-Project/blob/d2d3bf35734ff296ad5d8f40f77b270da933bc31/Images/Database/Beer%20Reviews%20ERD.png)
 
 
 
