@@ -5,6 +5,11 @@ __pycache__/
 
 # C extensions
 *.so
+# Ignore csv dataset
+reviews.csv
+breweries.csv
+beers.csv
+
 
 # Distribution / packaging
 .Python
