@@ -1,0 +1,153 @@
+--Creating tables for breweries
+CREATE TABLE breweries (
+    brewery_id INT,
+    brewery_name VARCHAR,
+	city VARCHAR,
+	state VARCHAR,
+	country VARCHAR,
+	notes TEXT,
+	types VARCHAR,
+	PRIMARY KEY (brewery_id)
+);
+
+--Creating tables for beers
+CREATE TABLE beers (
+    beer_id INT,
+    beer_name VARCHAR,
+	brewery_id INT,
+	state VARCHAR,
+	country VARCHAR,
+	style VARCHAR,
+	availability VARCHAR,
+	abv float,
+	retired VARCHAR,
+	--notes TEXT,
+	PRIMARY KEY (beer_id)
+);
+
+-- Creating tables for beer reviews
+CREATE TABLE reviews (
+    beer_id INT,
+    user_name VARCHAR,
+	date DATE,
+	look FLOAT,
+	smell FLOAT,
+	taste FLOAT,
+	feel FLOAT,
+	overall FLOAT,
+	score FLOAT
+);
+
+--adding foreign keys to breweries
+ALTER TABLE "beers" ADD CONSTRAINT "fk_breweries_id" FOREIGN KEY("brewery_id")
+REFERENCES "breweries" ("brewery_id");
+
+--removing null values from REVIEWS TABLE and removing beer ids which are not found in BEERS TABLE
+SELECT beer_id, user_name, date, look, smell, taste, feel, overall, score 
+INTO cln_reviews
+FROM reviews
+WHERE beer_id NOT IN (199819,343088,241474,343089) --this beer_ids were not found in BEERS TABLE hence giving error while creating parent/child relationship
+AND beer_id IS NOT NULL
+AND user_name IS NOT NULL
+AND date is NOT NULL
+AND look IS NOT NULL
+AND smell IS NOT NULL
+AND taste IS NOT NULL
+AND feel IS NOT NULL
+AND overall IS NOT NULL
+AND score IS NOT NULL;
+
+--adding foreign keys to BEERS TABLE
+ALTER TABLE "cln_reviews" ADD CONSTRAINT "fk_beers_id" FOREIGN KEY("beer_id")
+REFERENCES "beers" ("beer_id");
+
+SELECT count(user_name)from cln_reviews;
+
+--Removing null values from BREWERIES TABLE
+SELECT brewery_id, brewery_name, city, state, country, types
+INTO cln_breweries
+FROM breweries
+WHERE brewery_id IS NOT NULL
+AND brewery_name IS NOT NULL
+AND city IS NOT NULL
+AND state IS NOT NULL
+AND country IS NOT NULL
+AND TYPES IS NOT NULL;
+
+
+--Removing null values from BEERS TABLE
+SELECT beer_id, beer_name, brewery_id, state, country, style, availability, abv, retired
+INTO cln_beers
+FROM beers
+WHERE beer_id IS NOT NULL
+AND beer_name IS NOT NULL
+AND state IS NOT NULL
+AND country IS NOT NULL
+AND style IS NOT NULL
+AND availability IS NOT NULL
+AND abv IS NOT NULL
+AND retired IS NOT NULL
+;
+
+--Filetering only USA reviews from cln_reviews into us_reviews table
+SELECT a.beer_id, user_name, date, look, smell, taste, feel, overall, score
+INTO us_reviews
+FROM cln_reviews a, beers b
+WHERE a.beer_id = b.beer_id
+AND country = 'US';
+--drop table us_reviews
+select count(beer_id) from us_reviews
+
+--Count of reviews by beer_ids in US mnf beers
+SELECT beer_id, count(beer_id) AS no_of_review INTO review_count
+FROM us_reviews
+GROUP BY beer_id;
+--drop table review_count
+SELECT count(beer_id) from review_count;
+
+--US reviews of by number of reviews where beer_id got at least 500 reviews
+SELECT a.beer_id, user_name, date, look, smell, taste, feel, overall, score INTO us_multi_reviews
+FROM us_reviews a, review_count b
+WHERE a.beer_id = b.beer_id
+AND no_of_review >= 500 ;
+select * from us_multi_reviews where look is null
+
+
+--updating beers table to in keep only USA beers and removing null values from all columns
+SELECT brewery_id, name, city, state, country, types INTO us_breweries
+FROM breweries
+WHERE country='US'
+AND name IS NOT NULL
+AND brewery_id IS NOT NULL
+AND city IS NOT NULL
+AND state IS NOT NULL
+AND country IS NOT NULL
+AND types IS NOT NULL
+;
+--counting types of brewery in types column
+select brewery_id, name, city, state, country, types, LENGTH(types) - LENGTH(REPLACE(types, ' ', '')) + 1 AS type_count from us_breweries limit 100
+select count(beer_id) from us_reviews
+
+
+--Filtering beers table for USA mnf beers only and removing null from all columns, storing into us_beers Table
+SELECT beer_id, beer_name, brewery_id, state, country, style, availability, abv, retired INTO us_beers
+FROM beers
+WHERE country = 'US'
+AND beer_id IS NOT NULL
+AND beer_name IS NOT NULL
+AND brewery_id IS NOT NULL
+AND state IS NOT NULL
+AND country IS NOT NULL
+AND style IS NOT NULL
+AND availability IS NOT NULL
+AND abv IS NOT NULL
+AND retired IS NOT NULL;
+
+select count(beer_id) from us_beers
+
+
+
+select a.beer_id, user_name, date, look, smell, taste, feel, overall, score, state, country, style, availability, abv, retired	
+from cln_reviews a, cln_beers b
+where a.beer_id=b.beer_id
+
