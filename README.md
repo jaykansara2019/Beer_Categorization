@@ -228,5 +228,32 @@ Random forest classifiers are ensemble learning model that combines multiple sma
 - Large number of trees can make algorithm too slow for training and predictions (require more computational power and resources)
 - May miss variability within dataset
 
+## XGBoost model
+XGBoost is a decision-tree-based ensemble Machine Learning algorithm that uses a gradient boosting framework. The image below depicts the evolution of XGBoost model.
 
+![Evolution of XGBoost model](https://github.com/jaykansara2019/Group-A_UofT_Data-Bootcamp_Final-Project/blob/d8a259decc511850780c74e89b27bee67608a0c8/Images/Data/Evolution%20of%20XGBoost%20model.jpeg)
+
+## Benefits of XGBoost model:
+- Highly Flexible
+- Uses the power of parallel processing
+- Faster than Gradient Boosting
+- Supports regularization
+- Designed to handle missing data with its in-build features.
+- Users can run cross-validation after each iteration.
+- Works well in small to medium dataset
+
+The mechanism utilised for optimisation of the Gradient boosting model is illustrated below:
+
+![](https://github.com/jaykansara2019/Group-A_UofT_Data-Bootcamp_Final-Project/blob/d8a259decc511850780c74e89b27bee67608a0c8/Images/Data/XGBoost%20mechanism.png)
+[Reference](https://towardsdatascience.com/https-medium-com-vishalmorde-xgboost-algorithm-long-she-may-rein-edd9f99be63d#:~:text=What%20is%20XGBoost%3F,all%20other%20algorithms%20or%20frameworks.)
+
+## Data preparation:
+After the initial exploration and data transformation process, the string values in the 'Stratified_df' file were encoded using the LabelEncoder. Features selected in the fifth optimisation attempt are alcohol content (abv), availability, state, taste, smell, and overall score. The feature that we are trying to predict is a type of beer (e.g. Lager or Pale Ale). The data were scaled using the StandardSclaer to ensure that the outliers will not affect the model. The number of outliers was less than 5% in the data fed into the Machine Learning model. 
+
+## Model Train-Test split and Preliminary result
+The training sample was used at a default (75%) volume and 67% volume. The accuracy score obtained with 67% test data volume is 65% whereas the accuracy score with the default test volume (75%) is 64%.
+Further optimisation attempts will be performed by modifying the feature selection process and data stratification.
+
+## Limitation of XGBoost model:
+XGBoost does not perform quite well on sparse and unstructured data. The Gradient Boosting in general is very sensitive to outliers since every classifier is forced to fix the errors in the predecessor learners.
 
