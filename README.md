@@ -65,8 +65,7 @@ SciKitLearn is the ML library we'll be using to create a classifier. Our final p
 
 •	State
 
-•	Bewery
-
+•	Abv
 
 A few issues with the dataset and ways to overcome them are listed below:
 
@@ -82,17 +81,95 @@ Below are the steps we are following:
 
 2.	CLEAN & SCRUB DATA -> Merge the datasets in Python or SQL, filter for specifically breweries in the USA, and get rid of unnecessary columns and bin similar beer styles together, drop null values.
 
-3.	RUN DATA THROUGH ALOGORITHM -> Create 3 different classification algorithms for each class using class imbalance technique (oversampling, undersampling, and SMOTEENN).
+3.	RUN DATA THROUGH ALOGORITHM -> Create 3 different classification algorithms:
+    a) Logistic Regression
+    b) Random Forest
+    c) XG Boost
+
 
 4.	a) EVALUATE -> Determine if the model has acceptable accuracy, precision, recall, and f1    score.
     b) REPEAT -> Repeat steps 2-4 if model is not strong enough.
 
 5.	SAVE MODEL AND RESULTS -> Save the model and present to class
 
+### Preliminary Data Preprocessing
+The preliminary processing of the data involved:
+- Merging the breweries dataframe with the beers dataframe, and finally merging this to the reviews dataframe
+- Filter the dataframe for beers in the USA
+- Dropping null values
+- Bin similiar beer styles together
+
+### Preliminary Feature Engineering
+The preliminary feature engineering involved:
+- Encoding features such as 'state' and 'style'
+- Multiplied highly correlated variables together such as 'taste' and 'feel', and 'taste' and 'smell'
+
+### Training and Testing Datasets
+The train_test_split function was used to train and test the model. Initially we trained 75% of the data and tested the model with the remaining 25% (default). We also tried training the model with 67% of the data, and testing it with the remaining 33%.
+
+### Logistic Regression
+The first model we decided to implement was a logistic regression model. Since the model is straightforward, we decided to see if this simple model would be a good predictor for our data.
+
+#### Benefits
+Below are the benefits of the model:
+- Logistic Regression is simple to understand
+- It requires less training relative to other classifier models
+- It performs well for simple datasets as well as when the data set is linearly separable
+- It doesn’t make any assumptions about the distributions of classes in feature space
+- A Logistic Regression model is less likely to be over-fitted
+- They are easier to implement, interpret, and very efficient to train
+
+#### Limitations
+Below are the limitations of the model:
+- Sometimes a lot of Feature Engineering is required
+- If the independent features are correlated with each other it may affect the performance of the classifier
+- It is quite sensitive to noise and overfitting
+- Logistic Regression should not be used if the number of observations is lesser than the number of features
+- By using Logistic Regression, non-linear problems can’t be solved because it has a linear decision surface
+- By using Logistic Regression, it is tough to obtain complex relationships
+
+#### Feature Combinations
+Combinations of various features were used to increase the models accuracy as well as reducing the number of categories the model had to predict (removing "Other"). Below is a list of the various feature combinations and alterations to the beer style.
+
+- Combination 1:
+  a) state_encoded
+  b) abv
+  c) look
+  d) smell
+  e) taste
+  f) feel
+
+- Combination 2:
+  a) state_encoded
+  b) abv
+  c) look
+  d) taste x feel
+  e) taste x smell
+
+- Combination 3:
+  a) state_encoded
+  b) abv
+  c) taste x feel
+
+- Combination 4:
+  a) state_encoded
+  b) abv
+  c) look
+  d) taste x feel
+  e) taste x smell
+  f) Dropped the beer styles classified as "Other"
+
+Each model had an accuracy of around 11-12%. Using logistic regression did not provide a strong model with any of the combinations because it was not able to capture the variation in the data well.
+  
+  
+
+
+
 ## Database
 An ERD of our database is shown below:
 
 ![ERD-Beer Reviews](https://github.com/jaykansara2019/Group-A_UofT_Data-Bootcamp_Final-Project/blob/336a78fef4e5ad9639944e100fdeeb0b88ab5b28/Images/Database/ERD-Beer%20Reviews.png)
+
 
 
 
