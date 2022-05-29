@@ -56,7 +56,7 @@ All three csv files were combined to make a unified dataframe 'beer_reviews_comp
 
 All the data in the columns (taste, smell, look, feel, score, overall) were left skewed except the 'abv' column that appears to be symmetrical.
 
-![](https://github.com/jaykansara2019/Group-A_UofT_Data-Bootcamp_Final-Project/blob/fbc0dfa458f3609f5c1981344f23c48cdbed0bd8/Images/Data/hist_score.png)
+![](https://github.com/jaykansara2019/Group-A_UofT_Data-Bootcamp_Final-Project/blob/70531583b24a8a231549e0f24865f6a81c6047c3/Images/Data/hist_score.png)
 
 ![](https://github.com/jaykansara2019/Group-A_UofT_Data-Bootcamp_Final-Project/blob/fbc0dfa458f3609f5c1981344f23c48cdbed0bd8/Images/Data/hist_abv.png)
 
@@ -198,7 +198,7 @@ Below are the limitations of the model:
 - By using Logistic Regression, it is tough to obtain complex relationships
 
 ## Random Forest
-Random Forest machine learning model is used to train and test our database, to predict beer type based on various features.
+Random Forest machine learning model is used to train and test our database, to predict beer type based on various features. Random forest classifiers are ensemble learning model that combines multiple smaller models into a more robust and accurate model. Random forest models work well with large tabular dataset with robusteness and scalability and both output and feature selection are easy to interpret. Addictionaly, they handle outliers and nonlinear data. Considering the substential amount of tabular data we have, we choose random forest model for our predictions.
 
 ### Preliminary data preprocessing
 - Distribution of nemerical columns 
@@ -230,9 +230,6 @@ Model is optimized by, adjusting input data and increasing n_estimator.
 - Increasing `n_estimator` from 128 to 500 doesn't significantly increase accuracy and also cause extremely slow processing speed and freezing of computer due to large amound of data processed. We decide to keep `n_estimator` at 128.
 The highest predictive accuracy from Random Forest model is 60%.
 
-### Model Choice
-Random forest classifiers are ensemble learning model that combines multiple smaller models into a more robust and accurate model. Random forest models work well with large tabular dataset with robusteness and scalability and both output and feature selection are easy to interpret. Addictionaly, they handle outliers and nonlinear data. Considering the substential amount of tabular data we have, we choose random forest model for our predictions.
-
 #### Benefits
 - Are robust against overfitting
 - Can handle thousands of input variable without variable deletion
@@ -250,7 +247,6 @@ XGBoost is a decision-tree-based ensemble Machine Learning algorithm that uses a
 
 ![Evolution of XGBoost model](https://github.com/jaykansara2019/Group-A_UofT_Data-Bootcamp_Final-Project/blob/d8a259decc511850780c74e89b27bee67608a0c8/Images/Data/Evolution%20of%20XGBoost%20model.jpeg)
 
-
 The mechanism utilised for optimisation of the Gradient boosting model is illustrated below:
 
 ![](https://github.com/jaykansara2019/Group-A_UofT_Data-Bootcamp_Final-Project/blob/d8a259decc511850780c74e89b27bee67608a0c8/Images/Data/XGBoost%20mechanism.png)
@@ -261,7 +257,6 @@ After the initial exploration and data transformation process, the string values
 
 ### Model Train-Test split and Preliminary result
 The training sample was used at a default (75%) volume and 67% volume. The accuracy score obtained with 67% test data volume is 65% whereas the accuracy score with the default test volume (75%) is 64%.
-Further optimisation attempts will be performed by modifying the feature selection process and data stratification.
 
 ### Benefits:
 - Highly Flexible
@@ -272,8 +267,11 @@ Further optimisation attempts will be performed by modifying the feature selecti
 - Users can run cross-validation after each iteration.
 - Works well in small to medium dataset10
 
-### Limitation of XGBoost model:
+### Limitations:
 XGBoost does not perform quite well on sparse and unstructured data. The Gradient Boosting in general is very sensitive to outliers since every classifier is forced to fix the errors in the predecessor learners.
+
+### Model Selection
+Based on the accuracy of all three models, we have decided to go with XGBoost. Further optimisation attempts will be performed by modifying the feature selection process and data stratification.
 
 
 ## Database
@@ -295,4 +293,9 @@ Reviews Table:
 All fields in reviews table kept same as previous except for *text* field. We found this field is relatively less relevant for our analysis, hence removed this field completely. *beer_id* is a foreign key in reviews table in relation to beers table. There is no primary key in this table. A total of 9,073,128 rows were imported from the source, reviews.csv file. All rows were imported successfully.
 
 ![reviews table](https://github.com/jaykansara2019/Group-A_UofT_Data-Bootcamp_Final-Project/blob/067e09be6c23273ce73eb8e2813d2cb55601df84/Images/Database/reviews_table.png)
+
+## Dashboard
+[The draft copy of dashboard is included in the PowerPoint slide deck.](https://github.com/jaykansara2019/Group-A_UofT_Data-Bootcamp_Final-Project/blob/70531583b24a8a231549e0f24865f6a81c6047c3/Dashboard%20Blueprint.pptx)
+
+
 
