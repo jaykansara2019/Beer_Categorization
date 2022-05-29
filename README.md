@@ -102,14 +102,14 @@ Random Forest machine learning model is used to train and test our database, to 
 - Stratification
   There are 40 output classes for target column (Beer style) with over 4 million rows with some classes larger than other (Pale Ale: 1 million vs Ohters: 11k). To prevent undersampling of groups, we take a sample size of 11100 from each output values instead of stratifying the target column.
 - Encoding labels
-  Two categorical variables (Availability and State of the beer) are transformed into nemerical data by LabelEncoder.
+  Two categorical variables (Availability and State of the beer) are transformed into nemerical data by `LabelEncoder`.
 ### Preliminary feature selection
 Nine features are selected for the training input data: state beer, availablility, abv, look, smell, taste, feel, overall and score. Name, id, country and city of the beer and brewery are removed. Style of the beer is the target set.
 ### Spliting training and testing sets
 Stratified and encoded dataset is split into training and testing sets by 67-33 split.
 ### Results
 #### Fit the model
-- Training and Testing features data are scaled. We create the randome forest instance and fit the model with our training sets and make predictions using testing dsets. n_estimator is set to 128. 
+- Training and Testing features data are scaled. We create the randome forest instance and fit the model with our training sets and make predictions using testing dsets. `n_estimator` is set to 128. 
 #### Evaluate the model
 - Confusion matrix, classification report with accuracy score, precision, recall and f1 scores are shown to evaluate the model.
 - Precision, recall and f1-score for each class of beer are relatively similar around 50% to 70%. Considering precision and recall are similar in value, there is not much trade off between precision and recall, we will use accuracy to compare how well each model works. 
@@ -118,7 +118,7 @@ Stratified and encoded dataset is split into training and testing sets by 67-33 
 Model is optimized by, adjusting input data and increasing n_estimator. 
 - By correlation analysis, taste seems to be highly correlated with smell or look, we tried removing taste, or combine taste with look and smell. Removal of the columns reduced accuracy to 30%. 
 - We trie removing "Other" from output in case the variability within the bucketed class will cause confusion in the model. However, the accurcy stayed the same.
-- Increasing n_estimator from 128 to 500 doesn't significantly increase accuracy and also cause extremely slow processing speed and freezing of computer due to large amound of data processed. We decide to keep n_estimator at 128.
+- Increasing `n_estimator` from 128 to 500 doesn't significantly increase accuracy and also cause extremely slow processing speed and freezing of computer due to large amound of data processed. We decide to keep `n_estimator` at 128.
 The highest predictive accuracy from Random Forest model is 60%.
 ### Model Choice
 Random forest classifiers are ensemble learning model that combines multiple smaller models into a more robust and accurate model. Random forest models work well with large tabular dataset with robusteness and scalability and both output and feature selection are easy to interpret. Addictionaly, they handle outliers and nonlinear data. Considering the substential amount of tabular data we have, we choose random forest model for our predictions.
