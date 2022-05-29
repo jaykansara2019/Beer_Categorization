@@ -90,9 +90,26 @@ Below are the steps we are following:
 5.	SAVE MODEL AND RESULTS -> Save the model and present to class
 
 ## Database
-An ERD of our database is shown below:
+As the project progressed, based on the emerging needs, we made few changes to field names in all 3 tables. Removed fields/column names which has less relevant information and yet posed a challenge with storage of data. Also, dropped all rows with null values to get accurate results from our ML models. Explanation of the updates in detail below for each table and an updated ERD.
 
-![ERD-Beer Reviews](https://github.com/jaykansara2019/Group-A_UofT_Data-Bootcamp_Final-Project/blob/336a78fef4e5ad9639944e100fdeeb0b88ab5b28/Images/Database/ERD-Beer%20Reviews.png)
+![ERD-Beer Reviews](https://github.com/jaykansara2019/Group-A_UofT_Data-Bootcamp_Final-Project/blob/99e63ef6f4295c0b1994ce370187fb1e54f61c30/Images/Database/ERD_updated.png)
+
+**Breweries Table:**
+Changed *id*field name to *brewery_id* to specify this id indicates brewery. This update would help the users of the DB to easily distinguish between other id fields and help simplify the parent-child relationship. *name*ield was changed to *brewery_name* for same reason. All other fields city, state, country, notes, types kept similar as before. *brewery_id* is the primary key in this table. Total number of rows are 50,347, same as source breweries.csv file. 
+
+![breweries table](https://github.com/jaykansara2019/Group-A_UofT_Data-Bootcamp_Final-Project/blob/2dcc5ba8ec7ae23dc84f46984bb31af1091c3a3c/Images/Database/breweries_table.png)
+
+**Beers Table:**
+Both *id* and *name* fields were changed to *beer_id* and *beer_name* respectively to describe the field better and to describe the primary-foreign key relation easily with other tables. We also decided to remove notes field as most were null or without relevant comments. *beer_id* is the primary key in this table. *brewery_id* is the foreign key in beers table in relation to *brewery_id* in breweries table. Total 358,873 rows imported from beers.csv, same as source file.
+
+![beers table](https://github.com/jaykansara2019/Group-A_UofT_Data-Bootcamp_Final-Project/blob/067e09be6c23273ce73eb8e2813d2cb55601df84/Images/Database/beers_table.png)
+
+Reviews Table:
+All fields in reviews table kept same as previous except for *text* field. We found this field is relatively less relevant for our analysis, hence removed this field completely. *beer_id* is a foreign key in reviews table in relation to beers table. There is no primary key in this table. A total of 9,073,128 rows were imported from the source, reviews.csv file. All rows were imported successfully.
+
+![reviews table](https://github.com/jaykansara2019/Group-A_UofT_Data-Bootcamp_Final-Project/blob/067e09be6c23273ce73eb8e2813d2cb55601df84/Images/Database/reviews_table.png)
+
+
 
 
 
