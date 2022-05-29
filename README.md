@@ -295,7 +295,7 @@ All fields in reviews table kept same as previous except for *text* field. We fo
 ![reviews table](https://github.com/jaykansara2019/Group-A_UofT_Data-Bootcamp_Final-Project/blob/067e09be6c23273ce73eb8e2813d2cb55601df84/Images/Database/reviews_table.png)
 
 ## Dashboard
-[The draft copy of dashboard is included in the PowerPoint slide deck.](https://github.com/jaykansara2019/Group-A_UofT_Data-Bootcamp_Final-Project/blob/70531583b24a8a231549e0f24865f6a81c6047c3/Dashboard%20Blueprint.pptx)
+A draft copy of the dashboard can be found [here.](https://github.com/jaykansara2019/Group-A_UofT_Data-Bootcamp_Final-Project/blob/70531583b24a8a231549e0f24865f6a81c6047c3/Dashboard%20Blueprint.pptx)
 
 
 
