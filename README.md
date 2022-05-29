@@ -55,17 +55,19 @@
 
 SciKitLearn is the ML library we'll be using to create a classifier. Our final project will involve creating a supervised machine learning model that uses classification to predict the discrete beer style of a beer with the following inputs below:
 
-•	Aroma
+•	Smell
 
-•	Appearance
+•	Look
 
-•	Texture
+•	Feel
 
 •	Taste
 
 •	State
 
 •	Abv
+
+•	Availability
 
 A few issues with the dataset and ways to overcome them are listed below:
 
@@ -99,16 +101,16 @@ The preliminary processing of the data involved:
 - Dropping null values
 - Bin similiar beer styles together
 
-### Preliminary Feature Engineering
-The preliminary feature engineering involved:
-- Encoding features such as 'state' and 'style'
-- Multiplied highly correlated variables together such as 'taste' and 'feel', and 'taste' and 'smell'
-
 ### Training and Testing Datasets
 The train_test_split function was used to train and test the model. Initially we trained 75% of the data and tested the model with the remaining 25% (default). We also tried training the model with 67% of the data, and testing it with the remaining 33%.
 
 ### Logistic Regression
 The first model we decided to implement was a logistic regression model. Since the model is straightforward, we decided to see if this simple model would be a good predictor for our data.
+
+#### Preliminary Feature Engineering
+The preliminary feature engineering involved:
+- Encoding features such as 'state', and 'style'
+- Multiplied highly correlated variables together such as 'taste' and 'feel', and 'taste' and 'smell'
 
 #### Benefits
 Below are the benefits of the model:
