@@ -114,7 +114,7 @@ The mechanism utilised for optimisation of the Gradient boosting model is illust
 [Reference](https://towardsdatascience.com/https-medium-com-vishalmorde-xgboost-algorithm-long-she-may-rein-edd9f99be63d#:~:text=What%20is%20XGBoost%3F,all%20other%20algorithms%20or%20frameworks.)
 
 ## Data preparation:
-After the initial exploration and data transformation process, the string values in the 'Stratified_df' file were encoded using the LabelEncoder. Features selected in the fifth optimisation attempt are alcohol content (abv), availability, state, taste, smell, and overall score). The feature that we are trying to predict is a type of beer (e.g. Lager or Pale Ale). The data were scaled using the StandardSclaer to ensure that the outliers will not affect the model. The number of outliers was less than 5% in the data fed into the Machine Learning model. 
+After the initial exploration and data transformation process, the string values in the 'Stratified_df' file were encoded using the LabelEncoder. Features selected in the fifth optimisation attempt are alcohol content (abv), availability, state, taste, smell, and overall score. The feature that we are trying to predict is a type of beer (e.g. Lager or Pale Ale). The data were scaled using the StandardSclaer to ensure that the outliers will not affect the model. The number of outliers was less than 5% in the data fed into the Machine Learning model. 
 
 ## Model Train-Test split and Preliminary result
 The training sample was used at a default (75%) volume and 67% volume. The accuracy score obtained with 67% test data volume is 65% whereas the accuracy score with the default test volume (75%) is 64%.
