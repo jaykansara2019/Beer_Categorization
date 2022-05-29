@@ -52,7 +52,7 @@
 
 ### <ins>**Exploratory analysis**</ins>
 
-All three csv files were combined to make a unified dataframe 'beer_reviews_complete_df'. The distribution and outliers of the features have been illustarted below:
+All three csv files were combined to make a unified dataframe (beer_reviews_complete_df). The distribution and outliers of the features have been illustarted below:
 
 All the data in the columns (taste, smell, look, feel, score, overall) were left skewed except the 'abv' column that appears to be symmetrical.
 
