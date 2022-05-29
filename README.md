@@ -55,18 +55,19 @@
 
 SciKitLearn is the ML library we'll be using to create a classifier. Our final project will involve creating a supervised machine learning model that uses classification to predict the discrete beer style of a beer with the following inputs below:
 
-•	Aroma
+•	Smell
 
-•	Appearance
+•	Look
 
-•	Texture
+•	Feel
 
 •	Taste
 
 •	State
 
-•	Bewery
+•	Abv
 
+•	Availability
 
 A few issues with the dataset and ways to overcome them are listed below:
 
@@ -82,12 +83,89 @@ Below are the steps we are following:
 
 2.	CLEAN & SCRUB DATA -> Merge the datasets in Python or SQL, filter for specifically breweries in the USA, and get rid of unnecessary columns and bin similar beer styles together, drop null values.
 
-3.	RUN DATA THROUGH ALOGORITHM -> Create 3 different classification algorithms for each class using class imbalance technique (oversampling, undersampling, and SMOTEENN).
+3.	RUN DATA THROUGH ALOGORITHM -> Create 3 different classification algorithms:
+    a) Logistic Regression
+    b) Random Forest
+    c) XG Boost
+
 
 4.	a) EVALUATE -> Determine if the model has acceptable accuracy, precision, recall, and f1    score.
     b) REPEAT -> Repeat steps 2-4 if model is not strong enough.
 
 5.	SAVE MODEL AND RESULTS -> Save the model and present to class
+
+### Preliminary Data Preprocessing
+The preliminary processing of the data involved:
+- Merging the breweries dataframe with the beers dataframe, and finally merging this to the reviews dataframe
+- Filter the dataframe for beers in the USA
+- Dropping null values
+- Bin similiar beer styles together
+
+### Training and Testing Datasets
+The train_test_split function was used to train and test the model. Initially we trained 75% of the data and tested the model with the remaining 25% (default). We also tried training the model with 67% of the data, and testing it with the remaining 33%.
+
+### Logistic Regression
+The first model we decided to implement was a logistic regression model. Since the model is straightforward, we decided to see if this simple model would be a good predictor for our data.
+
+#### Preliminary Feature Engineering
+The preliminary feature engineering involved:
+- Encoding features such as 'state', and 'style'
+- Multiplied highly correlated variables together such as 'taste' and 'feel', and 'taste' and 'smell'
+
+#### Benefits
+Below are the benefits of the model:
+- Logistic Regression is simple to understand
+- It requires less training relative to other classifier models
+- It performs well for simple datasets as well as when the data set is linearly separable
+- It doesn’t make any assumptions about the distributions of classes in feature space
+- A Logistic Regression model is less likely to be over-fitted
+- They are easier to implement, interpret, and very efficient to train
+
+#### Limitations
+Below are the limitations of the model:
+- Sometimes a lot of Feature Engineering is required
+- If the independent features are correlated with each other it may affect the performance of the classifier
+- It is quite sensitive to noise and overfitting
+- Logistic Regression should not be used if the number of observations is lesser than the number of features
+- By using Logistic Regression, non-linear problems can’t be solved because it has a linear decision surface
+- By using Logistic Regression, it is tough to obtain complex relationships
+
+#### Feature Combinations
+Combinations of various features were used to increase the models accuracy as well as reducing the number of categories the model had to predict (removing "Other"). Below is a list of the various feature combinations and alterations to the beer style.
+
+- Combination 1:
+  a) state_encoded
+  b) abv
+  c) look
+  d) smell
+  e) taste
+  f) feel
+
+- Combination 2:
+  a) state_encoded
+  b) abv
+  c) look
+  d) taste x feel
+  e) taste x smell
+
+- Combination 3:
+  a) state_encoded
+  b) abv
+  c) taste x feel
+
+- Combination 4:
+  a) state_encoded
+  b) abv
+  c) look
+  d) taste x feel
+  e) taste x smell
+  f) Dropped the beer styles classified as "Other"
+
+Each model had an accuracy of around 11-12%. Using logistic regression did not provide a strong model with any of the combinations because it was not able to capture the variation in the data well.
+  
+  
+
+
 
 ## Database
 As the project progressed, based on the emerging needs, we made few changes to field names in all 3 tables. Removed fields/column names which has less relevant information and yet posed a challenge with storage of data. Also, dropped all rows with null values to get accurate results from our ML models. Explanation of the updates in detail below for each table and an updated ERD.
@@ -108,6 +186,7 @@ Reviews Table:
 All fields in reviews table kept same as previous except for *text* field. We found this field is relatively less relevant for our analysis, hence removed this field completely. *beer_id* is a foreign key in reviews table in relation to beers table. There is no primary key in this table. A total of 9,073,128 rows were imported from the source, reviews.csv file. All rows were imported successfully.
 
 ![reviews table](https://github.com/jaykansara2019/Group-A_UofT_Data-Bootcamp_Final-Project/blob/067e09be6c23273ce73eb8e2813d2cb55601df84/Images/Database/reviews_table.png)
+
 
 
 
