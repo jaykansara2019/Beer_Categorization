@@ -60,7 +60,7 @@ All the data in the columns (taste, smell, look, feel, score, and overall) were 
 
 ![](https://github.com/jaykansara2019/Group-A_UofT_Data-Bootcamp_Final-Project/blob/fbc0dfa458f3609f5c1981344f23c48cdbed0bd8/Images/Data/hist_abv.png)
 
-Outliers in the features columns were checked using the box plots. Approximately 5% of the outliers were present in the dataset for all the features. The amount of outliers should not affect the Machine Learning model. In Random Forest and XGBoost model, scaling was performed for Xvariables to ensure that outliers will not affect the accuracy score.
+Outliers in the features columns were checked using box plots. Approximately 5% of the outliers were present in the dataset for all the features. The amount of outliers should not affect the Machine Learning model. In Random Forest and XGBoost model, scaling was performed for the features to ensure that outliers will not affect the accuracy score.
 
 ![](https://github.com/jaykansara2019/Group-A_UofT_Data-Bootcamp_Final-Project/blob/fbc0dfa458f3609f5c1981344f23c48cdbed0bd8/Images/Data/Outliers_1.png)
 
@@ -88,7 +88,7 @@ A few issues with the dataset and ways to overcome them are listed below:
 
 1.	There are 104 unique beer styles. This needs to be cut down by binning similar beer styles and grouping beer styles with counts below 500 to an “Other” category.
 
-2.	The number of reviews for the various beer styles vary significantly, with some styles receiving 300 reviews and others receiving over 10,000. Some techniques that we can use to resolve this class imbalance is oversampling, undersampling, and SMOTEENN.
+2.	The number of reviews for the various beer styles vary significantly, with some styles receiving 300 reviews and others receiving over 10,000. Some techniques that we can use to resolve this class imbalance is stratified sampling.
 
 3.	The 3 tables need to be merged.
 
