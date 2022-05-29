@@ -54,7 +54,7 @@
 
 All three csv files were combined to make a unified dataframe (beer_reviews_complete_df). The distribution and outliers of the features have been illustarted below:
 
-All the data in the columns (taste, smell, look, feel, score, overall) were left skewed except the 'abv' column that appears to be symmetrical.
+All the data in the columns (taste, smell, look, feel, score, and overall) were left skewed except the 'abv' column that appears to be symmetrical.
 
 ![](https://github.com/jaykansara2019/Group-A_UofT_Data-Bootcamp_Final-Project/blob/70531583b24a8a231549e0f24865f6a81c6047c3/Images/Data/hist_score.png)
 
