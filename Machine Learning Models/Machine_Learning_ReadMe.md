@@ -35,58 +35,7 @@ The preliminary feature engineering involved:
 - Encoding features such as 'state', and 'style'
 - Multiplied highly correlated variables together such as 'taste' and 'feel', and 'taste' and 'smell'
 
-#### Feature Combinations
-Combinations of various features were used to increase the models accuracy as well as reducing the number of categories the model had to predict (removing "Other"). Below is a list of the various feature combinations and alterations to the beer style.
-
-- Combination 1:
-
-  a) state_encoded
-  
-  b) abv
-  
-  c) look
-  
-  d) smell
-  
-  e) taste
-  
-  f) feel
-
-- Combination 2:
-
-  a) state_encoded
-  
-  b) abv
-  
-  c) look
-  
-  d) taste x feel
-  
-  e) taste x smell
-
-- Combination 3:
-
-  a) state_encoded
-  
-  b) abv
-  
-  c) taste x feel
-
-- Combination 4:
-
-  a) state_encoded
-  
-  b) abv
-  
-  c) look
-  
-  d) taste x feel
-  
-  e) taste x smell
-  
-  f) Dropped the beer styles classified as "Other"
-
-Each model had an accuracy of around 11-12%. Using logistic regression did not provide a strong model with any of the combinations because it was not able to capture the variation in the data well.
+The model had an accuracy of around 11-12%. Using logistic regression did not provide a strong model with any of the combinations because it was not able to capture the variation in the data well.
 
 #### Benefits
 Below are the benefits of the model:
