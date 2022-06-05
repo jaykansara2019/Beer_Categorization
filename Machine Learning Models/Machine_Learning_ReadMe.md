@@ -18,9 +18,9 @@ SciKitLearn is the ML library we'll be using to create a classifier. Our final p
 
 - Abv
 
-- Availability
+- distribution (sold in breweries, bars, eatery, stores or beer-to-go stores)
 
-- type (sold in brewery, bar, eatery, store or beer-to-go stores)
+- availability (year-round, rotating)
 
 
 
@@ -185,18 +185,30 @@ Based on the accuracy of all three models, we have decided to go with XGBoost. F
 
 ## Optimisation and tuning attempts
 
-The first 6 optimisation attempts were focused around feature selection based on the importance and correlation. To avoid the bias, we removed the 'Overall' score feature due to its high correlation with the feature 'taste'. The final features (X) are:
+The first 6 optimisation attempts were focused on feature selection based on the importance and correlation. To avoid bias, we removed the 'Overall' score feature due to its high correlation with the feature 'taste'. The final features (X) are:
 - taste
-- type (sold in brewery, bar, eatery, store or beer-to-go stores
-- availability (winter, summer, all year around)
+- distribution (sold in breweries, bars, eatery, stores or beer-to-go stores)
+- availability (year-round, rotating)
 - abv (alcohol content)
 - state_beer
 
-The optimisation 7, we compared the training and testing accuracy and Optimisation 8 was performed to tune the number of trees (n_estimator). The result of n_estimator v/s loss ratio is illustarted below:
+The optimisation 7, we compared the training and testing accuracy and Optimisation 8 was performed to tune the number of trees (n_estimator) using GridSerachCV. The result of n_estimator v/s loss ratio is illustrated below:
 
 ![](https://github.com/jaykansara2019/Group-A_UofT_Data-Bootcamp_Final-Project/blob/3036a8dd5bb8834d67e87794f2ec0047e73a7d71/Images/Machine%20Learning/n_estimators.png)
 
-In Optimisation 9 and 10, we tried with the larger model to learn the best range of hyperparameters (e.g. alpha, lamba etc) and in the final attempt we are trying to use the shorter version of the model by trying to incorporate the hyperparameter outputs that we obtained from Optimisation 8 and 10.
+In Optimisation 9 and 10, using Optuna we tried with the larger model to learn the best range of hyperparameters (e.g. alpha, lambda etc).
+
+Based on Optuna tuning attempts we determined the best values for each hyperparameter, the importance and the number of trials required to achieve the optimal accuracy.
+
+![](https://github.com/jaykansara2019/Group-A_UofT_Data-Bootcamp_Final-Project/blob/6a5ee33d9f9cc3f572c0f721456a6e6b5c489eaa/Images/Machine%20Learning/Hypeparameter%20importance.png)
+
+![](https://github.com/jaykansara2019/Group-A_UofT_Data-Bootcamp_Final-Project/blob/6a5ee33d9f9cc3f572c0f721456a6e6b5c489eaa/Images/Machine%20Learning/Hyperparameter%20objective%20values.png)
+
+![](https://github.com/jaykansara2019/Group-A_UofT_Data-Bootcamp_Final-Project/blob/6a5ee33d9f9cc3f572c0f721456a6e6b5c489eaa/Images/Machine%20Learning/Optimisation%20history.png)
+
+In the final attempt, we are trying to use the shorter version of the model by trying to incorporate the hyperparameter outputs that we obtained from Optimisation 8 and 10. The testing accuracy achieved during the final attempt is 76.30%. The feature importance for the final model is depicted below:
+
+![](https://github.com/jaykansara2019/Group-A_UofT_Data-Bootcamp_Final-Project/blob/a324552b5e0adbb44013da7d289fd79516fcb85a/Images/Machine%20Learning/Feature%20importance%20ranking%20(1).png)
 
 
 
