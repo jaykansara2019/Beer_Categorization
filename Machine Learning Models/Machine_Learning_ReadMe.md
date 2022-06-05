@@ -20,7 +20,7 @@ SciKitLearn is the ML library we'll be using to create a classifier. Our final p
 
 - Availability
 
-- type (availability in brewery, bar, eatery, store or beer-to-go stores)
+- type (sold in brewery, bar, eatery, store or beer-to-go stores)
 
 
 
@@ -185,7 +185,12 @@ Based on the accuracy of all three models, we have decided to go with XGBoost. F
 
 ## Optimisation and tuning attempts
 
-The first 6 optimisation attempts were focused around feature selection based on the importance and correlation. 
+The first 6 optimisation attempts were focused around feature selection based on the importance and correlation. To avoid the bias, we removed the 'Overall' score feature due to its high correlation with the feature 'taste'. The final features (X) are:
+- taste
+- type (sold in brewery, bar, eatery, store or beer-to-go stores
+- availability (winter, summer, all year around)
+- abv (alcohol content)
+- state_beer
 
 The optimisation 7, we compared the training and testing accuracy and Optimisation 8 was performed to tune the number of trees (n_estimator). The result of n_estimator v/s loss ratio is illustarted below:
 
