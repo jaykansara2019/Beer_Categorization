@@ -155,10 +155,12 @@ Based on Optuna tuning attempts we determined the best values for each hyperpara
 
 ![](https://github.com/jaykansara2019/Group-A_UofT_Data-Bootcamp_Final-Project/blob/6a5ee33d9f9cc3f572c0f721456a6e6b5c489eaa/Images/Machine%20Learning/Optimisation%20history.png)
 
-In the final attempt, we are trying to use the shorter version of the model by trying to incorporate the hyperparameter outputs that we obtained from Optimisation 8 and 10. The testing accuracy achieved during the final attempt is 76.30%. The feature importance for the final model is depicted below:
+In the final attempt, we are trying to use the shorter version of the model by trying to incorporate the hyperparameter outputs that we obtained from Optimisation 8 and 10. The feature importance for the final model is depicted below:
 
 ![](https://github.com/jaykansara2019/Group-A_UofT_Data-Bootcamp_Final-Project/blob/a324552b5e0adbb44013da7d289fd79516fcb85a/Images/Machine%20Learning/Feature%20importance%20ranking%20(1).png)
 
+The testing accuracy achieved during the final attempt is 76.30%. A complete classification report is presented below:
 
+![](https://github.com/jaykansara2019/Group-A_UofT_Data-Bootcamp_Final-Project/blob/bfd17a5caa945fddb8e6bac198708207e29f5e26/Images/Machine%20Learning/test_classification_report_xgboost-1.png)
 
 
