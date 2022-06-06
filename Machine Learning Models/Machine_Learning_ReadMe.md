@@ -161,6 +161,6 @@ In the final attempt, we are trying to use the shorter version of the model by t
 
 The testing accuracy achieved during the final attempt is 76.30%. A complete classification report is presented below:
 
-![](https://github.com/jaykansara2019/Group-A_UofT_Data-Bootcamp_Final-Project/blob/bfd17a5caa945fddb8e6bac198708207e29f5e26/Images/Machine%20Learning/test_classification_report_xgboost-1.png)
+![](https://github.com/jaykansara2019/Group-A_UofT_Data-Bootcamp_Final-Project/blob/7d9ab9c400e4d5c220cf5c9c92ca7fceffe7687e/Images/Machine%20Learning/test_classification_report_xgboost-1.png)
 
 
