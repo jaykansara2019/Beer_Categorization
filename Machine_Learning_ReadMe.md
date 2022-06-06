@@ -134,7 +134,8 @@ Based on the accuracy of all three models, we have decided to go with XGBoost. F
 
 ## Optimisation and tuning attempts
 
-### Parameter tuning
+### Feature selections
+
 The first 6 optimisation attempts were focused on feature selection based on the importance and correlation. To avoid bias, we removed the 'Overall' score feature due to its high correlation with the feature 'taste'. The final features (X) are:
 - taste
 - distribution (sold in breweries, bars, eateries, stores or beer-to-go stores)
