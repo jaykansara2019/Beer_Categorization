@@ -298,5 +298,5 @@ All fields in reviews table kept same as previous except for *text* field. We fo
 Power BI dashboard link to be uploaded **here.**
 
 ## Presentation Slides
-Slide deck can accessed [here.](https://docs.google.com/presentation/d/13FeVm0NLnO7xnhP7s5QdGCRbEvXHWJK2bkiBH_-9EAs/edit#slide=id.g131833cbe65_0_0)
+Slide deck can be accessed [here.](https://docs.google.com/presentation/d/13FeVm0NLnO7xnhP7s5QdGCRbEvXHWJK2bkiBH_-9EAs/edit#slide=id.g131833cbe65_0_0)
 
