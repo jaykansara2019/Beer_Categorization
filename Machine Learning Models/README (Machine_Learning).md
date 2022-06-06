@@ -134,6 +134,8 @@ Based on the accuracy of all three models, we have decided to go with XGBoost. F
 
 ## Optimisation and tuning attempts
 
+### Feature selections
+
 The first 6 optimisation attempts were focused on feature selection based on the importance and correlation. To avoid bias, we removed the 'Overall' score feature due to its high correlation with the feature 'taste'. The final features (X) are:
 - taste
 - distribution (sold in breweries, bars, eateries, stores or beer-to-go stores)
@@ -141,11 +143,17 @@ The first 6 optimisation attempts were focused on feature selection based on the
 - abv (alcohol content)
 - state_beer
 
-The optimisation 7, we compared the training and testing accuracy and Optimisation 8 was performed to tune the number of trees (n_estimator) using GridSerachCV. The result of n_estimator v/s loss ratio is illustrated below:
+### Hyperparameter tuning
+
+In optimisation 7, we compared the training and testing accuracy (73% vs 71%) to check overfitting. 
+
+In Optimisation 8, we tuned the number of trees (n_estimator) using GridSerachCV. The result of n_estimator v/s loss ratio is illustrated below:
 
 ![](https://github.com/jaykansara2019/Group-A_UofT_Data-Bootcamp_Final-Project/blob/3036a8dd5bb8834d67e87794f2ec0047e73a7d71/Images/Machine%20Learning/n_estimators.png)
 
-In Optimisation 9 and 10, using Optuna we tried with the larger model to learn the best range of hyperparameters (e.g. alpha, lambda etc).
+In Optimisation 10, we tried hyperparameter tuning (optuna) on our training data to identify best trial with optimized parameters. The processing time was considerably long so we took a smaller sample for parameter tuning.
+
+In Optimisation 9, we used the smaller testing sample (1000 sample for each beer style) to reduce the processing time and tried hyperparameter tuning using Optuna to find the best parameters from the best trial (e.g. alpha, lambda etc).
 
 Based on Optuna tuning attempts we determined the best values for each hyperparameter, the importance and the number of trials required to achieve the optimal accuracy.
 
@@ -155,12 +163,15 @@ Based on Optuna tuning attempts we determined the best values for each hyperpara
 
 ![](https://github.com/jaykansara2019/Group-A_UofT_Data-Bootcamp_Final-Project/blob/6a5ee33d9f9cc3f572c0f721456a6e6b5c489eaa/Images/Machine%20Learning/Optimisation%20history.png)
 
-In the final attempt, we are trying to use the shorter version of the model by trying to incorporate the hyperparameter outputs that we obtained from Optimisation 8 and 10. The feature importance for the final model is depicted below:
+### Final Model
+
+In the final attempt, we used the hyperparameter outputs of the best trials that we obtained from Optimisation 8 and 10. The feature importance for the final model is depicted below:
 
 ![](https://github.com/jaykansara2019/Group-A_UofT_Data-Bootcamp_Final-Project/blob/a324552b5e0adbb44013da7d289fd79516fcb85a/Images/Machine%20Learning/Feature%20importance%20ranking%20(1).png)
 
 The testing accuracy achieved during the final attempt is 76.30%. A complete classification report is presented below:
 
 ![](https://github.com/jaykansara2019/Group-A_UofT_Data-Bootcamp_Final-Project/blob/7d9ab9c400e4d5c220cf5c9c92ca7fceffe7687e/Images/Machine%20Learning/test_classification_report_xgboost-1.png)
+
 
 
