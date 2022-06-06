@@ -145,11 +145,15 @@ The first 6 optimisation attempts were focused on feature selection based on the
 
 ### Hyperparameter tuning
 
-The optimisation 7, we compared the training and testing accuracy and Optimisation 8 was performed to tune the number of trees (n_estimator) using GridSerachCV. The result of n_estimator v/s loss ratio is illustrated below:
+In optimisation 7, we compared the training and testing accuracy (73% vs 71%) to check overfitting. 
+
+In Optimisation 8, we tuned the number of trees (n_estimator) using GridSerachCV. The result of n_estimator v/s loss ratio is illustrated below:
 
 ![](https://github.com/jaykansara2019/Group-A_UofT_Data-Bootcamp_Final-Project/blob/3036a8dd5bb8834d67e87794f2ec0047e73a7d71/Images/Machine%20Learning/n_estimators.png)
 
-In Optimisation 9 and 10, using Optuna we tried with the smaller testing sample and original testing data to learn the best range of hyperparameters (e.g. alpha, lambda etc).
+In Optimisation 10, we tried hyperparameter tuning (optuna) on our training data to identify best trial with optimized parameters. The processing time was considerably long so we took a smaller sample for parameter tuning.
+
+In Optimisation 9, we used the smaller testing sample (1000 sample for each beer style) to reduce the processing time and tried hyperparameter tuning using Optuna to find the best parameters from the best trial (e.g. alpha, lambda etc).
 
 Based on Optuna tuning attempts we determined the best values for each hyperparameter, the importance and the number of trials required to achieve the optimal accuracy.
 
