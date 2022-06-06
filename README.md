@@ -273,6 +273,8 @@ XGBoost does not perform quite well on sparse and unstructured data. The Gradien
 ### Model Selection
 Based on the accuracy of all three models, we have decided to go with XGBoost. Further optimisation attempts will be performed by modifying the feature selection process and data stratification.
 
+### Final Model
+Based on optimization and hyperparameter tuning, we are able to achieve accuracy of 76.30% for our final model using XGboost.
 
 ## Database
 As the project progressed, based on the emerging needs, we made few changes to field names in all 3 tables. Removed fields/column names which has less relevant information and yet posed a challenge with storage of data. Also, dropped all rows with null values to get accurate results from our ML models. Explanation of the updates in detail below for each table and an updated ERD.
@@ -295,7 +297,8 @@ All fields in reviews table kept same as previous except for *text* field. We fo
 ![reviews table](https://github.com/jaykansara2019/Group-A_UofT_Data-Bootcamp_Final-Project/blob/067e09be6c23273ce73eb8e2813d2cb55601df84/Images/Database/reviews_table.png)
 
 ## Dashboard
-A draft copy of the dashboard can be found **here**
+A draft copy of the dashboard can be found [here]
+(https://github.com/jaykansara2019/Group-A_UofT_Data-Bootcamp_Final-Project/blob/main/Beer%20Reviews.pbix)
 
 ## Presentation Slides
 Presentation deck can be accessed [here](https://docs.google.com/presentation/d/13FeVm0NLnO7xnhP7s5QdGCRbEvXHWJK2bkiBH_-9EAs/edit#slide=id.g131833cbe65_0_0)
