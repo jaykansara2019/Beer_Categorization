@@ -242,7 +242,7 @@ The highest predictive accuracy from Random Forest model is 60%.
 - May miss variability within dataset
 
 ## XGBoost model
-###Background
+### Background
 XGBoost is a decision-tree-based ensemble Machine Learning algorithm that uses a gradient boosting framework. The image below depicts the evolution of XGBoost model.
 
 ![Evolution of XGBoost model](https://github.com/jaykansara2019/Group-A_UofT_Data-Bootcamp_Final-Project/blob/d8a259decc511850780c74e89b27bee67608a0c8/Images/Data/Evolution%20of%20XGBoost%20model.jpeg)
