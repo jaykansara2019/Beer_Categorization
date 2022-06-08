@@ -296,11 +296,15 @@ All fields in reviews table kept same as previous except for *text* field. We fo
 
 ![reviews table](https://github.com/jaykansara2019/Group-A_UofT_Data-Bootcamp_Final-Project/blob/067e09be6c23273ce73eb8e2813d2cb55601df84/Images/Database/reviews_table.png)
 
+## Conclusion
+We were able to predict the beer style based on the availability, alcohol by volume, state of the brewery, distribution, and taste using XGBoost algorithm with the accuracy of 76%.
+
 ## Dashboard
 A draft copy of the dashboard can be found [here](https://github.com/jaykansara2019/Group-A_UofT_Data-Bootcamp_Final-Project/blob/main/Beer%20Reviews.pbix)
 
 ## Presentation Slides
-Presentation deck can be accessed [here](https://docs.google.com/presentation/d/13FeVm0NLnO7xnhP7s5QdGCRbEvXHWJK2bkiBH_-9EAs/edit?usp=sharing)
+Presentation deck can be accessed [here](https://docs.google.com/presentation/d/1QqpO-5Ynz_d55NKV6XTH7ZLknXDc4102/edit?usp=sharing&ouid=110331103381410062128&rtpof=true&sd=true)
+
 
 
 
