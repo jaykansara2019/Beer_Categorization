@@ -1,4 +1,5 @@
-# Group-A_UofT_Data-Bootcamp_Final-Project
+# Beer Categorization
+## Group-A_UofT_Data-Bootcamp_Final-Project
 
   # <ins>**Beer Reviews Analysis**</ins>
 
