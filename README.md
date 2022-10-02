@@ -26,7 +26,7 @@
 
   #### <ins>***Breweries.csv***</ins>
 
-  The breweries.csv file has 50,347 rows. The column header, data types and null values are depicted below:
+  The breweries.csv file has 50,347 rows. The column header, data types and null values are depicted below: 
 
   ![](https://github.com/jaykansara2019/Group-A_UofT_Data-Bootcamp_Final-Project/blob/cb87fd41d4f2b2ced89b18a7cc774a9b0baa775a/Images/df_breweries.png)
 
